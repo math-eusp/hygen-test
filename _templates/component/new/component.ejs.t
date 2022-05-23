@@ -13,7 +13,7 @@ const <%= name %> = () => (
   </>
 )
 <% if (locals.connected){ %>
-const mapStateToProps = (state: any) => ({});
+const mapStateToProps = (state) => ({});
 export const mapDispatchToProps = (dispatch) => ({});
 <% } %>
 export default <% if (!locals.connected) { %><%= name %><% } else { %>connect(mapStateToProps, mapDispatchToProps)(<%= name %>);<% } %>
