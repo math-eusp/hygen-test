@@ -1,5 +1,6 @@
 ---
 to: "<%= !locals.styleless ? `src/components/${name}/${name}.style.js` : null %>"
+unless_exists: true
 ---
 import styled from 'styled-components';
 

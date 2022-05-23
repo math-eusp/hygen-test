@@ -1,7 +1,7 @@
 ---
 to: "<%= locals.sample ? `src/components/${name}/${name}.sample.js` : null %>"
 force: false
-unless_exists: false
+unless_exists: true
 ---
 import React from 'react'
 

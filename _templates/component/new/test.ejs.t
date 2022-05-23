@@ -1,5 +1,6 @@
 ---
 to: "<%= !locals.testless ? `src/components/${name}/${name}.test.js` : null %>"
+unless_exists: true
 ---
 /* eslint-env jest */
 import <%= name %> from './<%= name %>';

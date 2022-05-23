@@ -1,5 +1,6 @@
 ---
 to: "<%= locals.redux ? `src/components/${name}/${name}.reducers.js` : null %>"
+unless_exists: true
 ---
 // @flow
 import { sampleAction } from './actions'

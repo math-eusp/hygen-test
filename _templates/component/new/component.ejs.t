@@ -1,5 +1,6 @@
 ---
 to: src/components/<%= name %>/<%= name %>.js
+unless_exists: true
 ---
 import React from 'react'
 <% if (!locals.styleless) { %>import { Container } from './<%= name %>.style'<% } %>

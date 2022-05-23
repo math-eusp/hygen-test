@@ -1,5 +1,6 @@
 ---
 to: src/components/<%= name %>/<%= name %>.reducers.js
+unless_exists: true
 ---
 // @flow
 import { sampleAction } from './actions'
