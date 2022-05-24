@@ -1,4 +1,4 @@
 ---
-to: "<%= locals.shared ? `src/components/${name}/${name}.shared.js` : null %>"
+to: "<%= locals.shared ? `src/components/${h.componentName(name)}/${h.componentName(name)}.shared.js` : null %>"
 from: shared/sample.js
 ---

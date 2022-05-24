@@ -1,5 +1,5 @@
 ---
-to: "<%= locals.redux ? `src/components/${name}/${name}.reducers.js` : null %>"
+to: "<%= locals.redux ? `src/components/${h.componentName(name)}/${h.componentName(name)}.reducers.js` : null %>"
 unless_exists: true
 ---
 // @flow
@@ -9,7 +9,7 @@ export const initialState = {
 
 }
 
-const <%= h.changeCase.camelCase(name) %>Reducer = (state = initialState, action) => {
+const <%= h.componentName(name) %>Reducer = (state = initialState, action) => {
   switch (action.type) {
     case sampleAction.type:
       return {
@@ -20,4 +20,4 @@ const <%= h.changeCase.camelCase(name) %>Reducer = (state = initialState, action
   }
 }
 
-export default <%= h.changeCase.camelCase(name) %>Reducer;
+export default <%= h.componentName(name) %>Reducer;

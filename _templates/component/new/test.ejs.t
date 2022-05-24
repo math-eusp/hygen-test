@@ -1,16 +1,16 @@
 ---
-to: "<%= !locals.testless ? `src/components/${name}/${name}.test.js` : null %>"
+to: "<%= !locals.testless ? `src/components/${h.componentName(name)}/${h.componentName(name)}.test.js` : null %>"
 unless_exists: true
 ---
 /* eslint-env jest */
-import <%= name %> from './<%= name %>';
+import <%= h.componentName(name) %> from './<%= h.componentName(name) %>';
 import React from 'react';
 import { mount } from 'enzyme';
 
-test('<%= name %> renders', () => {
+test('<%= h.componentName(name) %> renders', () => {
   const wrapper = mount(
-    < <%= name %> />
+    < <%= h.componentName(name) %> />
   );
   const p = wrapper.find('.<%= h.changeCase.paramCase(name) %>');
-  expect(p.text()).toBe('<%= name %>');
+  expect(p.text()).toBe('<%= h.componentName(name) %>');
 });

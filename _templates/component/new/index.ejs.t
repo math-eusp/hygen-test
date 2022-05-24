@@ -1,7 +1,7 @@
 ---
-to: src/components/<%= name %>/index.js
+to: src/components/<%= h.componentName(name) %>/index.js
 unless_exists: true
 ---
-import <%= name %> from './<%= name %>';
+import <%= h.componentName(name) %> from './<%= h.componentName(name) %>';
 
-export default <%= name %>;
+export default <%= h.componentName(name) %>;
