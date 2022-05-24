@@ -1,5 +1,5 @@
 ---
-to: src/components/index.js
+to: "<%= locals.inject ? `src/components/index.js` : null %>"
 inject: true
 after: "// @flow"
 ---
