@@ -5,4 +5,7 @@ message: |
   --sample same as above
   --styleless generate the structure without any style file
   --testless generate the structure without any test file
+  --connected will generate connected to redux
+  --redux will generate the actions and reducers for this component
+  --inject will inject this components into the index.js in root
 ---
