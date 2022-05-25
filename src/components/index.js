@@ -1,4 +1,3 @@
-// @flow
 import Home from "./Home";
 
 const components = {
