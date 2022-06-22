@@ -1,5 +1,5 @@
 ---
-to: "<%= locals.inject ? `src/components/index.js` : null %>"
+to: "<%= locals.inject ? `${h.currentPath(locals.path)}/index.js` : null %>"
 inject: true
 after: "const components = {"
 ---

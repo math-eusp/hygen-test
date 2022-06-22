@@ -1,5 +1,5 @@
 ---
-to: src/components/<%= h.componentName(name) %>/<%= h.componentName(name) %>.actions.js
+to: <%= h.currentPath(locals.path) %>/<%= h.componentName(name) %>/<%= h.componentName(name) %>.actions.js
 unless_exists: true
 ---
 import { createAction } from 'utils/actions'

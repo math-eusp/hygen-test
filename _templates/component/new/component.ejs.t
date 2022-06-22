@@ -1,19 +1,14 @@
 ---
-to: src/components/<%= h.componentName(name) %>/<%= h.componentName(name) %>.js
+to: <%= h.currentPath(locals.path) %>/<%= h.componentName(name) %>/<%= h.componentName(name) %>.js
 unless_exists: true
 ---
 import React from 'react'
-<% if (!locals.styleless) { %>import { Container } from './<%= h.componentName(name) %>.style'<% } %>
-<% if (locals.connected) { %>import { connect } from 'react-redux';<% } %>
-
+<% if (h.shouldRender(locals.render,'style')) { %>import { Container } from './<%= h.componentName(name) %>.style'<% } %>
 const <%= h.componentName(name) %> = () => (
-  <>
-    <div className="<%= h.changeCase.paramCase(name) %>"><%= h.componentName(name) %></div><% if (!locals.styleless) { %>
+  <div>
+    <div className="<%= h.changeCase.paramCase(name) %>"><%= h.componentName(name) %></div><% if (h.shouldRender(locals.render,'style')) { %>
     <Container>Hello World</Container><% } %>
-  </>
+  </div>
 )
-<% if (locals.connected){ %>
-const mapStateToProps = (state) => ({});
-export const mapDispatchToProps = (dispatch) => ({});
-<% } %>
-export default <% if (!locals.connected) { %><%= h.componentName(name) %><% } else { %>connect(mapStateToProps, mapDispatchToProps)(<%= h.componentName(name) %>);<% } %>
+
+export default <%= h.componentName(name) %>

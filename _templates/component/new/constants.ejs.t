@@ -1,12 +1,7 @@
 ---
-to: "<%= locals.constants ? `src/components/${h.componentName(name)}/${h.componentName(name)}.constants.js` : null %>"
+to: "<%= h.shouldRender(locals.render,'constants') ? `${h.currentPath(locals.path)}/${h.componentName(name)}/${h.componentName(name)}.constants.js` : null %>"
 unless_exists: true
 ---
-const constants = {
-  SAMPLE: 'SAMPLE',
-  SAMPLE_ACTION: 'SAMPLE_ACTION',
-}
 
-expor {
-  constants
-};
+export const SAMPLE = 'SAMPLE',
+export const SAMPLE_ACTION = 'SAMPLE_ACTION',

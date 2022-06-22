@@ -1,5 +1,5 @@
 ---
-to: "<%= !locals.styleless ? `src/components/${h.componentName(name)}/${h.componentName(name)}.style.js` : null %>"
+to: "<%= h.shouldRender(locals.render,'style') ? `${h.currentPath(locals.path)}/${h.componentName(name)}/${h.componentName(name)}.style.js` : null %>"
 unless_exists: true
 ---
 import styled from 'styled-components';

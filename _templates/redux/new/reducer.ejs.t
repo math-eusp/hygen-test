@@ -1,5 +1,5 @@
 ---
-to: src/components/<%= h.componentName(name) %>/<%= h.componentName(name) %>.reducers.js
+to: <%= h.currentPath(locals.path) %>/<%= h.componentName(name) %>/<%= h.componentName(name) %>.reducers.js
 unless_exists: true
 ---
 // @flow

@@ -1,5 +1,5 @@
 ---
-to: "<%= !locals.testless ? `src/components/${h.componentName(name)}/${h.componentName(name)}.test.js` : null %>"
+to: "<%= h.shouldRender(locals.render,'test') ? `${h.currentPath(locals.path)}/${h.componentName(name)}/${h.componentName(name)}.test.js` : null %>"
 unless_exists: true
 ---
 /* eslint-env jest */
@@ -9,7 +9,7 @@ import { mount } from 'enzyme';
 
 test('<%= h.componentName(name) %> renders', () => {
   const wrapper = mount(
-    < <%= h.componentName(name) %> />
+    <<%= h.componentName(name) %>/>
   );
   const p = wrapper.find('.<%= h.changeCase.paramCase(name) %>');
   expect(p.text()).toBe('<%= h.componentName(name) %>');
